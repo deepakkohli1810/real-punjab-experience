@@ -1,0 +1,154 @@
+// components/Navbar.tsx
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import TourDropdown from "./TourDropdown";
+
+export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  return (
+    <>
+      {/* Main Top Navbar */}
+      <nav className="bg-[#f4ebd7] shadow-md mt-4 max-w-[95%] border-[1px] border-gray-800 mx-auto rounded-full relative z-50">
+        <div className="mx-auto py-2 px-4 md:px-6 flex items-center justify-between">
+          
+          {/* 1. Logo (Left) */}
+          <Link href="/" className="font-bold text-blue-600 flex-shrink-0 z-50">
+            <Image
+              src="/Images/logo.png"
+              alt="Logo"
+              width={120}
+              height={40}
+              className="w-24 h-auto md:w-32 lg:w-[120px]"
+            />
+          </Link>
+
+          {/* 2. Desktop Navigation Links (Centered) */}
+          {/* Changed justify-between to justify-center via absolute positioning or flex tricks. 
+              Here we use a hidden md:flex container that grows to take up space */}
+          <div className="hidden md:flex tracking-wide flex-1 justify-center  items-center gap-2 lg:gap-4 xl:gap-6">
+            <Link
+              href="/"
+              className="text-gray-700 tracking-wide hover:text-white hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-lg lg:text-xl"
+            >
+              Home
+            </Link>
+
+            <div className="relative group">
+               {/* Wrapper to ensure dropdown aligns correctly in center */}
+               <TourDropdown />
+            </div>
+
+            <Link
+              href="/taxi-services"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] 
+              hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full 
+              transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
+            >
+              Taxi Services
+            </Link>
+            
+            <Link
+              href="/about"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] 
+              hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full 
+              transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
+            >
+              About
+            </Link>
+
+            <Link
+              href="/contact" 
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60]
+               hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full 
+               transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
+            >
+              Contact Us 
+            </Link>
+          </div>
+
+          {/* 3. Desktop Explore More Button (Right) */}
+          <Link
+            href="/book-now"
+            className="hidden md:block bg-[#1c2b60] text-base lg:text-lg text-white px-5 py-2 rounded-full hover:bg-blue-900 transition-all duration-300 ease-in-out flex-shrink-0 shadow-lg hover:shadow-xl"
+          >
+            Explore More
+          </Link>
+
+          {/* 4. Mobile Hamburger Button (Right - Visible only on mobile) */}
+          <button
+            className="md:hidden text-gray-700 focus:outline-none z-50 relative"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu Dropdown (Top) */}
+        {isMobileMenuOpen && (
+          <div className="absolute top-full text-xl tracking-wider left-2 right-2 mt-2 bg-[#f4ebd7] rounded-2xl shadow-xl md:hidden z-40 animate-fadeIn border border-gray-200">
+            <div className="flex flex-col p-4 gap-2">
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
+              >
+                Home
+              </Link>
+
+              <div className="ml-4 ">
+                 <TourDropdown />
+              </div>
+
+              <Link
+                href="/taxi-services"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
+              >
+                Taxi Services
+              </Link>
+              
+              <Link
+                href="/about"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
+              >
+                About
+              </Link>
+
+              <Link
+                href="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
+              >
+                Contact Us
+              </Link>
+
+              <Link
+                href="/book-now"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="bg-[#1c2b60] text-white text-center text-lg font-semibold px-5 py-3 rounded-full hover:bg-blue-900 transition-all duration-300 mt-2"
+              >
+                Explore More
+              </Link>
+            </div>
+          </div>
+        )}
+      </nav>
+
+     
+    </>
+  );
+}

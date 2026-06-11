@@ -31,7 +31,7 @@ const TourDropdown = () => {
   }, []);
 
   return (
-    <div className="relative text-center" ref={dropdownRef}>
+    <div className="relative text-center " ref={dropdownRef}>
       {/* Main Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}

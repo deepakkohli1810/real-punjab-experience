@@ -4,7 +4,9 @@ import Link from "next/link";
 
 export default function CleanTourCard({ title, location, days, people, price, image, slug }) {
   return (
-    <div className="group bg-white font-rubik rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden border border-gray-900 flex flex-col h-full">
+    <div className="group bg-white/50 font-serif rounded-2xl 
+    shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all 
+    duration-300 overflow-hidden border border-gray-900 flex flex-col h-full">
       
       {/* --- Image Section --- */}
       <div className="relative h-60 w-full overflow-hidden">

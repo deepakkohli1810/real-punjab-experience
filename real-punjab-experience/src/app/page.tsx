@@ -40,15 +40,18 @@ export default function page() {
 
     
  {/* // Tours Details  */}
-    <div className='p-4 mt-8 font-mono'>
-      <h1>Tours </h1>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 '>
+    <div className='p-4 mt-8 px-30'>
+      <div className='mt-10 mb-10 '>
+        <h1 className='text-black text-4xl text-start font-rubik  '>Top Rated Tours In Amritsar </h1>
+      <p className='text-black ml-1 tracking-wider font-rubik'> Specially curated for you</p>
+      </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 '>
 
      
       <TourCard 
       title="Golden Temple Tour"
-    location="France"
-    days={5}
+    location="Amritsar"
+    days={1}
     people={2}
     price={1200}
     image="/Tours/GoldentTemple.jpeg"

@@ -6,10 +6,10 @@ export default function CleanTourCard({ title, location, days, people, price, im
   return (
     <div className="group bg-white/50 font-serif rounded-2xl 
     shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all 
-    duration-300 overflow-hidden border border-gray-900 flex flex-col h-full">
+    duration-300 overflow-hidden  flex flex-col h-full">
       
       {/* --- Image Section --- */}
-      <div className="relative h-60 w-full overflow-hidden">
+      <div className="relative h-90 w-full overflow-hidden">
         <Image 
           src={image} 
           alt={title} 
@@ -38,10 +38,7 @@ export default function CleanTourCard({ title, location, days, people, price, im
           <h3 className="text-xl font-bold font-Helvetica text-gray-900 line-clamp-1 group-hover:text-[#1c2b60] transition-colors">
             {title}
           </h3>
-          <div className="flex items-center gap-1 mt-1">
-            <span className="text-yellow-400 text-sm">★★★★★</span>
-            <span className="text-xs text-gray-500">(4.8)</span>
-          </div>
+         
         </div>
 
         {/* Meta Info (People & Type) */}
@@ -50,21 +47,22 @@ export default function CleanTourCard({ title, location, days, people, price, im
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#1c2b60]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
-            <span>Min {people}</span>
+            <span className="text-gray-800">Min {people}</span>
           </div>
           <div className="flex items-center gap-1.5 bg-gray-50 px-2 py-1 rounded-md">
-             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#1c2b60]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#0b1849]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
              </svg>
-            <span>Guided Tour</span>
+            <span className="text-gray-800" >Guided Tour</span>
           </div>
         </div>
 
         {/* Footer: Price & Buttons */}
-        <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between gap-3">
+        <div className="mt-auto pt-4 border-t border-gray-600/25 flex items-center justify-between gap-3">
           <div>
-            <p className="text-xs text-gray-400 font-medium uppercase">Total Price</p>
-            <p className="text-2xl font-bold text-[#1c2b60]">${price}</p>
+            
+            <p className="text-xs text-gray-900 font-medium uppercase">Starting Price</p>
+            <p className="text-2xl font-bold text-[#1c2b60]">₹{price}</p>
           </div>
 
           {/* Button Group */}

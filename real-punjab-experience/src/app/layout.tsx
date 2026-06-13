@@ -21,7 +21,7 @@ export default function RootLayout({
       lang="en"
       className={`${rubik.variable} ${playfair.variable}`}
     >
-      <body>{children}</body>
+      <body className={rubik.className}>{children}</body>
     </html>
   );
 }

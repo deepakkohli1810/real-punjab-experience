@@ -106,7 +106,7 @@ export default function page() {
      people={2}
      price={1200}
      image="/Tours/GoldentTemple.jpeg"
-     slug="GoldenTemp"
+     slug="GoldenTemple1"
       />
        <TourCard
         title="Wagah Border Tour  "
@@ -115,7 +115,7 @@ export default function page() {
      people={2}
      price={1400}
      image="/Tours/Border-Tour.jpeg"
-     slug="golden-temple-tour"
+     slug="BorderTour"
       
       />
        <TourCard
@@ -125,7 +125,7 @@ export default function page() {
      people={2}
      price={1400}
      image="/Tours/Food-Tour1.jpeg"
-     slug="food-walking-tour"
+     slug="FoodTour"
       />
       
     </div>
@@ -140,7 +140,7 @@ export default function page() {
      people={2}
      price={1200}
      image="/Tours/Village-Tour.jpeg"
-     slug="Village-tour"
+     slug="VillageTour"
       />
        <TourCard
         title="Heritage Walk Tour "
@@ -149,7 +149,7 @@ export default function page() {
      people={2}
      price={1400}
      image="/Tours/Heritage-Walk.jpeg"
-     slug="Heritage-Walk"
+     slug="HeritageWalk"
       
       />
        <TourCard
@@ -159,7 +159,7 @@ export default function page() {
      people={2}
      price={1400}
      image="/Tours/Food-Tour1.jpeg"
-     slug="palki-sahib-ceremony"
+     slug="NightCeremony"
       />
       
     </div>

@@ -96,7 +96,7 @@ export default function PackageTourCard({
           <div className="flex gap-2">
             {/* Details Button */}
             <Link 
-              href={`/packages/${slug}`}
+              href={`/Package-Tour/${slug}`}
               className="px-3 py-2 text-sm font-semibold text-gray-600 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-[#1c2b60] transition-colors"
             >
               View Plan

@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import ReviewsSection from './components/reviewSection'
 import TourDetails from './components/TourDetailCompo'
 import TaxiServicesPage from './TaxiServices/page'
+import AboutUs from './AboutUS/page'
+import PackageTourDetails from './components/PackageTourCompo'
 
 export default function page() {
   const tourData = {
@@ -149,7 +151,7 @@ export default function page() {
      days={1}
      people={2}
      price={1400}
-     image="/Tours/Heritage-Walk.jpeg"
+     image="/HeritageImages/[Heritage]1.jpg"
      slug="HeritageWalk"
       
       />
@@ -159,7 +161,7 @@ export default function page() {
      days={1}
      people={2}
      price={1400}
-     image="/Tours/Food-Tour1.jpeg"
+     image="/PalkiPhotos/[Palki]3.jpg"
      slug="NightCeremony"
       />
       
@@ -185,24 +187,24 @@ export default function page() {
   days={1}
   price={15999}
   image="/Tours/GoldentTemple.jpeg"
-  slug="kerala-backwaters-hills"
-  inclusions={["5 Star Hotel", "Breakfast & Dinner", "Private Cab", "Houseboat Stay"]}
+  slug="OnedayTour"
+  
 />
  <PackageTourCard 
   title="Amritsar Two Days Tour "
   days={2}
   price={15999}
-  image="/Tours/GoldentTemple.jpeg"
-  slug="kerala-backwaters-hills"
-  inclusions={["5 Star Hotel", "Breakfast & Dinner", "Private Cab", "Houseboat Stay"]}
+  image="/Images/HeroImage.jpeg"
+  slug="TwodayTour"
+  
 />
  <PackageTourCard 
   title="Amritsar Excursion with Mountains Escapes"
   days={5}
   price={15999}
-  image="/Tours/GoldentTemple.jpeg"
-  slug="kerala-backwaters-hills"
-  inclusions={["5 Star Hotel", "Breakfast & Dinner", "Private Cab", "Houseboat Stay"]}
+  image="/Images/5DayTour.jpg"
+  slug="FivedayTour"
+  
 />
      </div>
 
@@ -224,7 +226,8 @@ export default function page() {
   </div>
 
 
-  
+   <AboutUs/>
+   <PackageTourDetails/>
 </div>
 <Footer/>
 </div>

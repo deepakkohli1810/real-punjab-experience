@@ -7,10 +7,10 @@ export default function NightPalkiSahibTour() {
     location: "Amritsar, Punjab",
     rating: 5.0,
     reviews: 156,
-    price: 30,
-    originalPrice: 45,
+    price:999,
+    originalPrice: 1499,
     duration: "3-4 Hours",
-    groupSize: "Max 10 People",
+    groupSize: "Max 20 People",
     difficulty: "Easy" as const, 
     description: "Experience the profound spiritual tranquility of Amritsar after dark. This exclusive evening tour takes you to the illuminated Harmandir Sahib (Golden Temple) to witness the mesmerizing Palki Sahib ceremony, also known as Sukhasan. Watch as the holy Guru Granth Sahib is reverently carried in a decorated palanquin from the inner sanctum to the Akal Takht for the night, accompanied by soulful hymns (Kirtan) and the rhythmic chanting of the congregation. The glowing reflection of the temple on the Sarovar (holy tank) at night creates an unforgettable, magical atmosphere.",
     
@@ -89,11 +89,12 @@ export default function NightPalkiSahibTour() {
       "Gratuities for the guide and driver"
     ],
     images: [
-      "/Images/palki-sahib-night-hero.jpg",
-      "/Images/golden-temple-illuminated.jpg",
-      "/Images/guru-ki-pul-night.jpg",
-      "/Images/akal-takht-evening.jpg"
-    ]
+  "/PalkiPhotos/[Palki]1.jpg",
+  "/PalkiPhotos/[Palki]2.jpeg",
+  "/PalkiPhotos/[Palki]3.jpg",
+  "/PalkiPhotos/[Palki]4.jpg",
+  "/PalkiPhotos/[Palki]5.jpg"
+]
   };
 
   return (

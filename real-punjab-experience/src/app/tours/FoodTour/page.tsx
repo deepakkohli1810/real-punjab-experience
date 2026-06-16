@@ -1,20 +1,21 @@
 import React from 'react'
 import TourDetails from '../../components/TourDetailCompo';
+import TourPageLayout from '../../components/TourPageLayout';
 
 export default function AmritsarFoodTour() {
   const tourData = {
-    title: "Amritsar Heritage Food Walking Tour",
+    title: "Amritsar Food Walking Tour",
     location: "Amritsar, Punjab",
     rating: 4.9,
     reviews: 428,
-    price: 55,
-    originalPrice: 75,
+    price: 1299,
+    originalPrice: 1999,
     duration: "5-6 Hours",
-    groupSize: "Max 8 People",
+    groupSize: "Min 3 People",
     difficulty: "Easy" as const, 
     description: "Embark on a culinary journey through the vibrant streets of Amritsar and discover why this city is considered the food capital of Punjab. This guided walking tour takes you to the most iconic dhabas, sweet shops, and street food stalls that have been serving authentic Punjabi flavors for generations. From the world-famous Amritsari Kulcha to creamy Lassi and spicy Chole Bhature, taste your way through history.",
     
-    meetingPoint: "Hall Gate Clock Tower, Amritsar", 
+    meetingPoint: "As per guest convenience, Amritsar", 
     
     highlights: [
       "Taste authentic Amritsari Kulcha at century-old dhabas",
@@ -125,17 +126,21 @@ export default function AmritsarFoodTour() {
       "Entry fees to any monuments (if visited)"
     ],
     images: [
-      "/Images/amritsar-food-tour-hero.jpg",
-      "/Images/amritsari-kulcha.jpg",
-      "/Images/lassi-amritsar.jpg",
-      "/Images/hall-bazaar.jpg",
-      "/Images/kesar-da-dhaba.jpg"
-    ]
+      "/FoodImages/Food8.jpg",
+      "/FoodImages/Food1.jpg",
+  "/FoodImages/Food2.jpg",
+  "/FoodImages/Food3.jpg",
+  "/FoodImages/Food4.jpg",
+  "/FoodImages/Food5.jpg",
+  "/FoodImages/Food6.jpg",
+  "/FoodImages/Food7.jpg",
+]
   };
 
   return (
     <div>
       <TourDetails {...tourData} />
+      <TourPageLayout/>
     </div>
   )
 }

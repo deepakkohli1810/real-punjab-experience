@@ -1,5 +1,6 @@
 import React from 'react'
 import TourDetails from '../../components/TourDetailCompo';
+import TourPageLayout from '../../components/TourPageLayout';
 
 export default function WagahBorder() {
   const tourData = {
@@ -7,14 +8,14 @@ export default function WagahBorder() {
     location: "Amritsar, Punjab",
     rating: 4.8,
     reviews: 285,
-    price: 45,
-    originalPrice: 60,
-    duration: "4-5 Hours",
-    groupSize: "Max 12 People",
+    price: 1999,
+    originalPrice: 4999,
+    duration: "3-4 Hours",
+    groupSize: "Min 2 People",
     difficulty: "Easy" , 
     description: "Experience the patriotic fervor and high-energy spectacle of the Wagah Border ceremony. This half-day evening tour takes you through Amritsar's historic landmarks, including the majestic Khalsa College, the solemn Punjab State War Memorial, and the historic Attari Railway Station—the last stop on Indian soil—before culminating at the world-famous border retreat ceremony.",
     
-    meetingPoint: "Amritsar Hotel Lobby or Railway Station", 
+    meetingPoint: "Amritsar Hotel Lobby ", 
     
     highlights: [
       "Witness the electrifying 'Beating Retreat' ceremony at the India-Pakistan border",
@@ -88,16 +89,18 @@ export default function WagahBorder() {
       "Any food or beverages"
     ],
     images: [
-      "/Images/wagah-border-hero.jpg",
-      "/Images/khalsa-college.jpg",
-      "/Images/war-memorial-amritsar.jpg",
-      "/Images/attari-station.jpg"
+      "/BorderImages/BorderImage.jpeg",
+      "/BorderImages/audience.jpg",
+       "/BorderImages/BorderGateImage.webp",
+        "/BorderImages/indianflag.jpg",
+      
     ]
   };
 
   return (
     <div>
-      <TourDetails {...tourData} />
+       <TourDetails {...tourData} />
+     <TourPageLayout/>
     </div>
   )
 }

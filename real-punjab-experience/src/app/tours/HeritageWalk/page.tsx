@@ -6,11 +6,11 @@ export default function HeritageWalk() {
     title: "Amritsar Heritage Walk: Back in Time",
     location: "Amritsar, Punjab",
     rating: 4.8,
-    reviews: 245,
-    price: 25,
-    originalPrice: 35,
+    reviews: 24,
+    price: 999,
+    originalPrice: 1499,
     duration: "2.5 Hours",
-    groupSize: "Max 15 People",
+    groupSize: "Min 2 People",
     difficulty: "Easy" as const, 
     description: "Step back in time on a guided walking tour through the narrow, 400-year-old lanes of Old Amritsar. Starting from the historic Town Hall and ending at the Golden Temple, discover the city's rich architecture, bustling traditional markets, and hidden stories.",
     
@@ -85,12 +85,15 @@ export default function HeritageWalk() {
       "Entry fees to any optional monuments"
     ],
     images: [
-      "/Images/heritage-walk-town-hall.jpg",
-      "/Images/old-amritsar-lanes.jpg",
-      "/Images/qila-ahluwalia.jpg",
-      "/Images/amritsari-jutti.jpg",
-      "/Images/heritage-street-golden-temple.jpg"
-    ]
+  "/HeritageImages/[Heritage]1.jpg",
+  "/HeritageImages/[Heritage]2.jpg",
+  "/HeritageImages/[Heritage]3.jpg",
+  "/HeritageImages/[Heritage]4.jpg",
+  "/HeritageImages/[Heritage]5.jpg",
+  "/HeritageImages/[Heritage]6.jpg",
+  "/HeritageImages/[Heritage]7.jpg"
+
+]
   };
 
   return (

@@ -3,6 +3,7 @@ import TourDetails from '../../components/TourDetailCompo';
 import ReviewsSection from '../../components/reviewSection';
 import WhyChooseUs from '../../WhyChooseUs/page';
 import Footer from '../../components/Footer';
+import TourPageLayout from '../../components/TourPageLayout';
 
 export default function GoldenTemple() {
   const tourData = {
@@ -97,17 +98,8 @@ export default function GoldenTemple() {
 
   return (
     <div >
-      <TourDetails {...tourData} />
-      <div className='px-4 md:px-20 xl:px-50'>
-        <ReviewsSection/>
-      <div className="mt-16 md:mt-24">
-      <WhyChooseUs />
-    </div>
-   
-      </div>
-      <div className="mt-16 md:mt-24">
-    <Footer />
-  </div>
+       <TourDetails {...tourData} />
+      <TourPageLayout/>
     </div>
   )
 }

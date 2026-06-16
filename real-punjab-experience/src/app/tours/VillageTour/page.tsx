@@ -1,5 +1,6 @@
 import React from 'react'
 import TourDetails from '../../components/TourDetailCompo';
+import TourPageLayout from '../../components/TourPageLayout';
 
 export default function page() {
   const tourData = {
@@ -7,10 +8,10 @@ export default function page() {
     location: "Amritsar, Punjab",
     rating: 4.9,
     reviews: 184,
-    price: 25,
-    originalPrice: 35,
+    price: 1199,
+    originalPrice:1599 ,
     duration: "Full Day (8-9 Hours)",
-    groupSize: "Max 10 People",
+    groupSize: "Min 2 People",
     difficulty: "Easy" as const, 
     description: "Experience the true essence of traditional Punjabi lifestyle on this slow-paced, immersive village day tour. Starting early to catch a beautiful sunrise over the fields, you will visit a local village near the India-Pakistan border. This hands-on experience allows you to participate in daily farm chores, enjoy a thrilling tractor ride, and cook on a traditional clay oven (Chulha). Engage in traditional village games, dress up in a Pagri, dance Bhangra, and savor a delicious farm-to-table lunch prepared with homegrown ingredients. Perfect for travelers of all ages, this tour offers a fascinating glimpse into the innocent way of living and the incredible warmth of the local people.",
     
@@ -123,16 +124,19 @@ export default function page() {
       "Entry fees to any optional monuments"
     ],
     images: [
-      "/Images/village-tour-hero.jpg",
-      "/Images/tractor-ride-punjab.jpg",
-      "/Images/punjabi-village-lunch.jpg",
-      "/Images/bhangra-dance-village.jpg"
+    "/VillageImages/village1.jpeg",
+"/VillageImages/village2.jpeg",
+"/VillageImages/village3.jpeg",
+"/VillageImages/village4.jpeg",
+"/VillageImages/village5.jpeg",
+"/VillageImages/village6.jpeg",
     ]
   };
 
   return (
     <div>
       <TourDetails {...tourData} />
+      <TourPageLayout/>
     </div>
   )
 }

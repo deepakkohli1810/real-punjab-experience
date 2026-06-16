@@ -210,50 +210,86 @@ export default function PackageTourDetails({
             )}
 
             {/* NEW ITINERARY DESIGN */}
-            {itinerary.length > 0 && (
-              <section id="itinerary">
-                <h2 className="text-2xl font-serif font-bold text-gray-900 mb-6">Day-by-Day Itinerary</h2>
-                <div className="space-y-6">
-                  {itinerary.map((day, idx) => (
-                    <div key={idx} className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                      
-                      {/* Day Header */}
-                      <div className="bg-gradient-to-r from-blue-50 to-white p-5 border-b border-gray-100 flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-md flex-shrink-0">
-                          {day.day}
-                        </div>
-                        <div>
-                          <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Day {day.day}</span>
-                          <h3 className="text-lg font-bold text-gray-900 leading-tight">{day.title}</h3>
-                        </div>
-                      </div>
-                      
-                      {/* Activities List */}
-                      <div className="p-6">
-                        <div className="relative pl-6 border-l-2 border-blue-100 space-y-6">
-                          {day.activities.map((activity, actIdx) => (
-                            <div key={actIdx} className="relative">
-                              {/* Timeline Dot */}
-                              <div className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-blue-500 border-2 border-white shadow-sm" />
-                              
-                              <div>
-                                {activity.time && (
-                                  <span className="inline-block text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded mb-1">
-                                    {activity.time}
-                                  </span>
-                                )}
-                                <h4 className="font-bold text-gray-800 mb-1">{activity.title}</h4>
-                                <p className="text-sm text-gray-600 leading-relaxed">{activity.description}</p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
+          {itinerary.length > 0 && (
+  <section id="itinerary">
+    <h2 className="text-2xl font-serif font-bold text-gray-900 mb-6">Day-by-Day Itinerary</h2>
+    <div className="space-y-4">
+      {itinerary.map((day, idx) => {
+        const [isOpen, setIsOpen] = useState(false);
+        return (
+          <div key={idx} className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            
+            {/* Day Header — always visible, clickable to toggle */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="w-full bg-gradient-to-r from-blue-50 to-white p-5 border-b border-gray-100 flex items-center gap-4 text-left"
+            >
+              <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-md flex-shrink-0">
+                {day.day}
+              </div>
+              <div className="flex-1">
+                <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Day {day.day}</span>
+                <h3 className="text-lg font-bold text-gray-900 leading-tight">{day.title}</h3>
+                {/* Minimized preview — show first activity when collapsed */}
+                {!isOpen && day.activities.length > 0 && (
+                  <p className="text-xs text-gray-400 mt-1 truncate">
+                    {day.activities.length} activities · Starting at {day.activities[0].time}
+                  </p>
+                )}
+              </div>
+              {/* Chevron icon */}
+              <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </button>
+
+            {/* Activities List — hidden when collapsed */}
+            <div className={`transition-all duration-300 ease-in-out ${isOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}>
+              <div className="p-6">
+                <div className="relative pl-6 border-l-2 border-blue-100 space-y-6">
+                  {day.activities.map((activity, actIdx) => (
+                    <div key={actIdx} className="relative">
+                      {/* Timeline Dot */}
+                      <div className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-blue-500 border-2 border-white shadow-sm" />
+                      <div>
+                        {activity.time && (
+                          <span className="inline-block text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded mb-1">
+                            {activity.time}
+                          </span>
+                        )}
+                        <h4 className="font-bold text-gray-800 mb-1">{activity.title}</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">{activity.description}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-              </section>
-            )}
+              </div>
+            </div>
+
+          </div>
+        );
+      })}
+    </div>
+
+    {/* Expand / Collapse All */}
+    <div className="mt-4 flex justify-end">
+      <button
+        onClick={() => {
+          const allOpen = itinerary.every((_, i) => document.getElementById(`day-${i}`)?.dataset.open === "true");
+          itinerary.forEach((_, i) => {
+            const el = document.getElementById(`day-${i}`);
+            if (el) el.dataset.open = String(!allOpen);
+          });
+        }}
+        className="text-sm text-blue-600 underline underline-offset-2 hover:text-blue-800"
+      >
+        Expand All Days
+      </button>
+    </div>
+  </section>
+)}
 
             {/* Inclusions / Exclusions */}
             {(inclusions.length > 0 || exclusions.length > 0) && (

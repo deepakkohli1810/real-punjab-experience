@@ -26,10 +26,8 @@ export default function TourPageLayout() {
          <ReviewsSection/>
         </div>
 
-        {/* Why Choose Us Section */}
-        <div className="mt-16 md:mt-24">
-         <WhyChooseUs/>
-        </div>
+       
+      
         
       </div>
 

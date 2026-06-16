@@ -10,13 +10,15 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <>
+    // 1. Wrapper with relative and z-50 to ensure the navbar sits above ALL page content
+    <header className="relative z-50 w-full">
+      
       {/* Main Top Navbar */}
-      <nav className="bg-[#f4ebd7] shadow-md mt-4 max-w-[95%] border-[1px] border-gray-800 mx-auto rounded-full relative z-50">
+      <nav className="bg-[#f4ebd7] shadow-md mt-4 max-w-[95%] border-[1px] border-gray-800 mx-auto rounded-full relative">
         <div className="mx-auto py-2 px-4 md:px-6 flex items-center justify-between">
           
           {/* 1. Logo (Left) */}
-          <Link href="/" className="font-bold text-blue-600 flex-shrink-0 z-50">
+          <Link href="/" className="font-bold text-blue-600 relative z-10">
             <Image
               src="/Images/logo.png"
               alt="Logo"
@@ -27,9 +29,7 @@ export default function Navbar() {
           </Link>
 
           {/* 2. Desktop Navigation Links (Centered) */}
-          {/* Changed justify-between to justify-center via absolute positioning or flex tricks. 
-              Here we use a hidden md:flex container that grows to take up space */}
-          <div className="hidden md:flex tracking-wide flex-1 justify-center  items-center gap-2 lg:gap-4 xl:gap-6">
+          <div className="hidden md:flex tracking-wide flex-1 justify-center items-center gap-2 lg:gap-4 xl:gap-6">
             <Link
               href="/"
               className="text-gray-700 tracking-wide hover:text-white hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-lg lg:text-xl"
@@ -38,33 +38,26 @@ export default function Navbar() {
             </Link>
 
             <div className="relative group">
-               {/* Wrapper to ensure dropdown aligns correctly in center */}
                <TourDropdown />
             </div>
 
             <Link
               href="/TaxiServices"
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] 
-              hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full 
-              transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
             >
               Taxi Services
             </Link>
             
             <Link
               href="/AboutUS"
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] 
-              hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full 
-              transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
             >
               About
             </Link>
 
             <Link
               href="/contact" 
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60]
-               hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full 
-               transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
             >
               Contact Us 
             </Link>
@@ -78,10 +71,13 @@ export default function Navbar() {
             Explore More
           </Link>
 
-          {/* 4. Mobile Hamburger Button (Right - Visible only on mobile) */}
+          {/* 4. Mobile Hamburger Button (Right) */}
           <button
-            className="md:hidden text-gray-700 focus:outline-none z-50 relative"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-gray-700 focus:outline-none z-[9999] touch-manipulation relative"
+            onClick={() => {
+   
+    setIsMobileMenuOpen(prev => !prev);
+  }}
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
@@ -95,11 +91,16 @@ export default function Navbar() {
             )}
           </button>
         </div>
+      </nav>
 
-        {/* Mobile Menu Dropdown (Top) */}
-        {isMobileMenuOpen && (
-          <div className="absolute top-full text-xl tracking-wider left-2 right-2 mt-2 bg-[#f4ebd7] rounded-2xl shadow-xl md:hidden z-40 animate-fadeIn border border-gray-200">
-            <div className="flex flex-col p-4 gap-2">
+      {/* 🚨 MOBILE DROPDOWN - MOVED OUTSIDE THE <nav> 🚨 */}
+      {/* This prevents it from being clipped if the nav or a parent has overflow-hidden */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-full left-0 right-0 mt-2 flex justify-center  z-50">
+          <div className="pointer-events-auto w-[95%] bg-[#f4ebd7] rounded-2xl shadow-xl 
+          md:hidden animate-fadeIn border border-gray-200">
+            <div className="flex flex-col p-4 gap-2 text-xl tracking-wider">
+              
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -108,7 +109,7 @@ export default function Navbar() {
                 Home
               </Link>
 
-              <div className="ml-4 ">
+              <div className="ml-4">
                  <TourDropdown />
               </div>
 
@@ -145,10 +146,8 @@ export default function Navbar() {
               </Link>
             </div>
           </div>
-        )}
-      </nav>
-
-     
-    </>
+        </div>
+      )}
+    </header>
   );
 }

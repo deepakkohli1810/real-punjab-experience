@@ -11,54 +11,11 @@ import AboutUs from './AboutUS/page'
 import PackageTourDetails from './components/PackageTourCompo'
 
 export default function page() {
-  const tourData = {
-    title: "Golden Triangle Luxury Tour",
-    location: "Delhi, Agra, Jaipur",
-    rating: 4.8,
-    reviews: 124,
-    price: 450,
-    originalPrice: 600,
-    duration: "7 Days / 6 Nights",
-    groupSize: "Max 12 People",
-    difficulty: "Easy",
-    description: "Experience the best of India with our curated Golden Triangle luxury tour. Visit the majestic Taj Mahal, explore the vibrant streets of Jaipur, and delve into the history of Old Delhi.",
-    highlights: [
-      "Private AC Vehicle throughout the tour",
-      "Luxury accommodation in 4-star hotels",
-      "Professional English-speaking guide",
-      "All entrance fees included",
-      "Daily breakfast and dinner"
-    ],
-    itinerary: [
-      { day: 1, title: "Arrival in Delhi", description: "Meet and greet at the airport. Transfer to hotel. Evening free to explore Connaught Place." },
-      { day: 2, title: "Delhi Sightseeing", description: "Visit Red Fort, Jama Masjid, and Qutub Minar. Evening light and sound show at Red Fort." },
-      { day: 3, title: "Delhi to Agra", description: "Drive to Agra (200km). Visit Taj Mahal at sunrise. Explore Agra Fort." },
-      // ... add more days
-    ],
-    inclusions: [
-      "Accommodation (6 nights)",
-      "Breakfast & Dinner daily",
-      "Transportation (Mercedes/VW Vento)",
-      "Guide services",
-      "Entrance tickets"
-    ],
-    exclusions: [
-      "Lunch",
-      "Personal expenses",
-      "Airfare to/from Delhi",
-      "Tips and gratuities"
-    ],
-    images: [
-      "/Images/tour-hero.jpg",
-      "/Images/taj-mahal.jpg",
-      "/Images/jaipur-fort.jpg",
-      "/Images/delhi-food.jpg"
-    ]
-  };
+ 
   return (
 <div>
   <div className='relative px-4 md:px-6 lg:px-20 py-6 md:py-8 lg:py-8'>
-    <div className="relative w-full h-[70vh] md:h-[60vh] lg:h-[750px] overflow-hidden">
+    <div className="relative w-full h-[75vh] md:h-[60vh] lg:h-[750px] ">
       
       {/* --- BACKGROUND IMAGE --- */}
       <Image
@@ -72,10 +29,10 @@ export default function page() {
 
       {/* --- DARK OVERLAY (Optional but Recommended) --- */}
       {/* This makes white text readable regardless of the image brightness */}
-      <div className="absolute inset-0 rounded-4xl bg-black/40 z-10"></div>
+      <div className="absolute inset-0 rounded-4xl bg-black/40 z-0"></div>
 
       {/* --- TEXT CONTENT --- */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+      <div className="absolute inset-0 z-0 flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-4xl font-serif  md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
           Real Punjab Experience
         </h1>
@@ -99,7 +56,7 @@ export default function page() {
       <p className='text-black ml-1 tracking-wider font-rubik'> Specially curated for you</p>
       </div>
       {/* First Row of the card  */}
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:gap-20 lg:gap-20 md:gap-10 gap-10 '>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:gap-10 lg:gap-10 md:gap-10 gap-10 '>
 
      
       <TourCard 
@@ -215,21 +172,16 @@ export default function page() {
   </button>
 </div>
 
- <div className='mt-20'>
-  <WhyChooseUs/>
- </div>
-
  <div className='mt-20 '>
   <ReviewsSection/>
  </div>
       
   </div>
-
-
-   <AboutUs/>
-   <PackageTourDetails/>
+  
 </div>
+<AboutUs/>
 <Footer/>
+
 </div>
   )
 }

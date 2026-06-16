@@ -122,23 +122,24 @@ export default function TourDetails({
         src={images[selectedImageIndex]} 
         alt={`${title} - Image ${selectedImageIndex + 1}`} 
         fill 
-        className="object-contain transition-transform duration-500 z-10" 
+        className="object-contain transition-transform duration-500 z-10 pointer-events-none" 
         priority 
       />
       
       {images.length > 1 && (
-        <div className="absolute top-4 right-4  backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm z-20">
+        <div className="absolute  top-4 right-4  backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm z-20">
           {selectedImageIndex + 1} / {images.length}
         </div>
       )}
     </div>
 
     {/* Thumbnail Gallery */}
-    {images.length > 1 && (
-      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
+      {images.length > 1 && (
+      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 ">
         {images.map((image, index) => (
           <button
             key={index}
+            type="button" // Good practice for buttons
             onClick={() => handleImageClick(index)}
             className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 ${
               selectedImageIndex === index 
@@ -150,7 +151,8 @@ export default function TourDetails({
               src={image} 
               alt={`${title} thumbnail ${index + 1}`} 
               fill 
-              className="object-cover"
+              // 👇 ADD pointer-events-none HERE 👇
+              className="object-cover pointer-events-none" 
             />
           </button>
         ))}

@@ -135,6 +135,13 @@ export default function TwoDayAmritsarTour() {
         images: [
             "/Images/GoldentTemple.jpeg",
            "/BorderImages/BorderImage.jpeg",
+           "/PackagePhotos/2DayPhotos/durgiana-night.jpg",
+             "/PackagePhotos/2DayPhotos/durgiana-temple.jpg",
+               "/PackagePhotos/2DayPhotos/Durgiana-Temple.jpg",
+                 "/PackagePhotos/2DayPhotos/fort.jpg",
+                                  "/PackagePhotos/2DayPhotos/fort2.jpg",
+                 "/PackagePhotos/2DayPhotos/font3.jpg",
+
             "/BorderImages/BorderGateImage.webp",
               "/PackagePhotos/1DayPhotos/Jallianwala-bagh.jpg",
                "/PackagePhotos/1DayPhotos/partitionMuseum2.jpg",
@@ -144,6 +151,11 @@ export default function TwoDayAmritsarTour() {
 "/VillageImages/village4.jpeg"
 ,"/HeritageImages/[Heritage]3.jpg",
   "/HeritageImages/[Heritage]4.jpg",
+       "/FoodImages/Food1.jpg",
+  "/FoodImages/Food2.jpg",
+  "/FoodImages/Food3.jpg",
+  "/FoodImages/Food4.jpg",
+
         ]
     };
 

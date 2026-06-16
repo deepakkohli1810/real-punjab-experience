@@ -1,6 +1,7 @@
 // app/tours/5-day-amritsar-dharamshala/page.tsx
 import React from 'react'
 import PackageTourDetails from '../../components/PackageTourCompo';
+import TourPageLayout from '../../components/TourPageLayout';
 
 export default function FiveDayAmritsarDharamshalaTour() {
     const packageData = {
@@ -110,19 +111,41 @@ export default function FiveDayAmritsarDharamshalaTour() {
         ],
         
         images: [
-            "/Images/5-day-tour-hero.jpg", 
-            "/Images/golden-temple-day.jpg", 
-            "/Images/punjabi-village-lunch.jpg",
-            "/Images/dharamshala-mcleodganj.jpg", 
-            "/Images/palampur-tea-garden.jpg",
-            "/Images/naddi-viewpoint.jpg",
-            "/Images/hpca-stadium.jpg"
+        "/PackagePhotos/5DayPhotos/[FiveDays]1.jpg",
+"/PackagePhotos/5DayPhotos/[FiveDays]2.jpg",
+"/PackagePhotos/5DayPhotos/[FiveDays]3.jpg",
+"/PackagePhotos/5DayPhotos/[FiveDays]4.jpg",
+"/PackagePhotos/5DayPhotos/[FiveDays]5.jpg",
+"/PackagePhotos/5DayPhotos/[FiveDays]6.jpg",
+"/PackagePhotos/5DayPhotos/[FiveDays]7.jpg",
+"/PackagePhotos/5DayPhotos/[FiveDays]8.jpg",
+"/PackagePhotos/5DayPhotos/[FiveDays]9.jpg",
+"/VillageImages/village4.jpeg"
+,"/HeritageImages/[Heritage]3.jpg",
+  "/HeritageImages/[Heritage]4.jpg",
+       "/FoodImages/Food1.jpg",
+  "/FoodImages/Food2.jpg",
+  "/FoodImages/Food3.jpg",
+     "/Images/GoldentTemple.jpeg",
+           "/BorderImages/BorderImage.jpeg",
+           "/PackagePhotos/2DayPhotos/durgiana-night.jpg",
+             "/PackagePhotos/2DayPhotos/durgiana-temple.jpg",
+               "/PackagePhotos/2DayPhotos/Durgiana-Temple.jpg",
+                 "/PackagePhotos/2DayPhotos/fort.jpg",
+                                  "/PackagePhotos/2DayPhotos/fort2.jpg",
+                 "/PackagePhotos/2DayPhotos/font3.jpg",
+
+            "/BorderImages/BorderGateImage.webp",
+              "/PackagePhotos/1DayPhotos/Jallianwala-bagh.jpg",
+               "/PackagePhotos/1DayPhotos/partitionMuseum2.jpg",
+               "/VillageImages/village1.jpeg",
         ]
     };
 
     return (
         <div>
             <PackageTourDetails {...packageData} />
+            <TourPageLayout/>
         </div>
     )
 }

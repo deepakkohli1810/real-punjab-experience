@@ -6,6 +6,7 @@ import WhyChooseUs from './WhyChooseUs/page'
 import Footer from './components/Footer'
 import ReviewsSection from './components/reviewSection'
 import TourDetails from './components/TourDetailCompo'
+import TaxiServicesPage from './TaxiServices/page'
 
 export default function page() {
   const tourData = {
@@ -222,7 +223,7 @@ export default function page() {
       
   </div>
 
-  <TourDetails  {...tourData} />
+
   
 </div>
 <Footer/>

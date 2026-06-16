@@ -43,7 +43,7 @@ export default function Navbar() {
             </div>
 
             <Link
-              href="/taxi-services"
+              href="/TaxiServices"
               className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] 
               hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full 
               transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"

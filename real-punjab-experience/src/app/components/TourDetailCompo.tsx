@@ -108,50 +108,56 @@ export default function TourDetails({
       </div>
 
       {/* --- IMAGE GALLERY WITH THUMBNAILS --- */}
-      {images.length > 0 && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Main Image */}
-          <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-sm border border-gray-100 bg-gray-200 mb-4">
-            <Image 
-              src={images[selectedImageIndex]} 
-              alt={`${title} - Image ${selectedImageIndex + 1}`} 
-              fill 
-              className="object-cover transition-transform duration-500" 
-              priority 
-            />
-            {images.length > 1 && (
-              <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm">
-                {selectedImageIndex + 1} / {images.length}
-              </div>
-            )}
-          </div>
+{images.length > 0 && (
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    {/* Main Image Container - Fixed Height Maintained */}
+    <div className="relative h-[400px] md:h-[500px] rounded-2xl bg-black/10 overflow-hidden shadow-sm border border-gray-100  mb-4">
+      
+      {/* 1. Blurred Background Layer (Fills the empty spaces elegantly) */}
+     
 
-          {/* Thumbnail Gallery */}
-          {images.length > 1 && (
-            <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
-              {images.map((image, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleImageClick(index)}
-                  className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                    selectedImageIndex === index 
-                      ? 'border-blue-500 ring-2 ring-blue-200' 
-                      : 'border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'
-                  }`}
-                >
-                  <Image 
-                    src={image} 
-                    alt={`${title} thumbnail ${index + 1}`} 
-                    fill 
-                    className="object-cover"
-                  />
-                </button>
-              ))}
-            </div>
-          )}
+      {/* 2. Main Image Layer (Fully visible, no cropping, centered) */}
+      <Image 
+        src={images[selectedImageIndex]} 
+        alt={`${title} - Image ${selectedImageIndex + 1}`} 
+        fill 
+        className="object-contain transition-transform duration-500 z-10" 
+        priority 
+      />
+      
+      {images.length > 1 && (
+        <div className="absolute top-4 right-4  backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm z-20">
+          {selectedImageIndex + 1} / {images.length}
         </div>
       )}
+    </div>
 
+    {/* Thumbnail Gallery */}
+    {images.length > 1 && (
+      <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
+        {images.map((image, index) => (
+          <button
+            key={index}
+            onClick={() => handleImageClick(index)}
+            className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+              selectedImageIndex === index 
+                ? 'border-blue-500 ring-2 ring-blue-200' 
+                : 'border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'
+            }`}
+          >
+            <Image 
+              src={image} 
+              alt={`${title} thumbnail ${index + 1}`} 
+              fill 
+              className="object-cover"
+            />
+          </button>
+        ))}
+      </div>
+    )}
+  </div>
+)}
       {/* --- MAIN CONTENT LAYOUT --- */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -256,8 +262,8 @@ export default function TourDetails({
                   <div>
                     <span className="text-gray-500 text-sm">From</span>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-4xl font-bold text-gray-900">${price}</span>
-                      {originalPrice && <span className="text-gray-400 line-through text-lg">${originalPrice}</span>}
+                      <span className="text-4xl font-bold text-gray-900">₹{price}</span>
+                      {originalPrice && <span className="text-gray-400 line-through text-lg">₹{originalPrice}</span>}
                     </div>
                     <span className="text-xs text-gray-500">per person</span>
                   </div>
@@ -304,7 +310,7 @@ export default function TourDetails({
 
                 <div className="flex justify-between items-center mb-6 p-3 bg-gray-50 rounded-lg border border-gray-100">
                   <span className="text-sm text-gray-600">Total for {travelers} traveler(s)</span>
-                  <span className="text-xl font-bold text-gray-900">${price * travelers}</span>
+                  <span className="text-xl font-bold text-gray-900">₹{price * travelers}</span>
                 </div>
 
                 <button 

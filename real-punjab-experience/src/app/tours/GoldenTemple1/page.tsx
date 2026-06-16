@@ -1,5 +1,8 @@
 import React from 'react'
 import TourDetails from '../../components/TourDetailCompo';
+import ReviewsSection from '../../components/reviewSection';
+import WhyChooseUs from '../../WhyChooseUs/page';
+import Footer from '../../components/Footer';
 
 export default function GoldenTemple() {
   const tourData = {
@@ -7,8 +10,8 @@ export default function GoldenTemple() {
     location: "Amritsar, Punjab",
     rating: 4.9,
     reviews: 312,
-    price: 65,
-    originalPrice: 85,
+    price: 999,
+    originalPrice: 1499,
     duration: "8 Hours",
     groupSize: "Max 12 People",
     difficulty: "Easy" as const, // 'as const' ensures TypeScript recognizes the exact string literal
@@ -86,15 +89,25 @@ export default function GoldenTemple() {
     ],
     images: [
       "/Images/HeroImage.jpeg",
-      "/Images/golden-temple-night.jpg",
-      "/Images/langar-kitchen.jpg",
-      "/Images/jallianwala-bagh.jpg"
+      "/Images/guest-at-golden-temple.jpeg",
+      "/Images/GoldentTemple.jpeg",
+      "/Images/langar-golden-temple.jpeg"
     ]
   };
 
   return (
-    <div>
+    <div >
       <TourDetails {...tourData} />
+      <div className='px-4 md:px-20 xl:px-50'>
+        <ReviewsSection/>
+      <div className="mt-16 md:mt-24">
+      <WhyChooseUs />
+    </div>
+   
+      </div>
+      <div className="mt-16 md:mt-24">
+    <Footer />
+  </div>
     </div>
   )
 }

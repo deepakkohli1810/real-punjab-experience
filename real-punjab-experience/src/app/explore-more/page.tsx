@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function ExploreMore() {
   return (
     <div>
-               <div className='px-8 mt-30 xl:px-40 lg:px-30 md:px-10  ' >
+               <div className=' lg:mt-20 md:mt-14 mt-10 px-6 sm:px-6 md:px-10 lg:px-20 xl:px-40 2xl:px-80 ' >
                  <div className='mt-10 mb-10 '>
                    <h1 className='text-black text-4xl text-start font-rubik  '>Top Rated Tours In Amritsar </h1>
                  <p className='text-black ml-1 tracking-wider font-rubik'> Specially curated for you</p>
@@ -99,7 +99,7 @@ export default function ExploreMore() {
            
              {/* Handpick experience  */}
            
-             <div className='mt-20 px-8 mb-10 px-2 xl:px-40 lg:px-30 md:px-10 ' >
+             <div className='mt-20  mb-10 px-6 sm:px-6 md:px-10 lg:px-20 xl:px-40 2xl:px-80 ' >
                 <h1 className='text-black text-4xl text-start font-rubik  '> Handpicked Experience </h1>
                  <p className='text-black ml-1 tracking-wider font-rubik'> Travel hassle free </p>
                   
@@ -141,13 +141,14 @@ export default function ExploreMore() {
              </Link>
            </div>
            
-            <div className='mt-20 '>
-             <ReviewsSection/>
-            </div>
+           
                  
              </div>
              
-
+               <div className='mt-20 '>
+             <ReviewsSection/>
+            </div>
+            
               <TourEscortPage/>
               <AboutUs/>
     </div>

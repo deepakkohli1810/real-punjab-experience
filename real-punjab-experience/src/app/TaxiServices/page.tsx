@@ -99,13 +99,7 @@ export default function TaxiServicesPage() {
       <div className="relative  text-white py-20 md:py-28">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute  z-10" />
-          <Image 
-            src="/Images/taxi-hero-bg.jpg" 
-            alt="Taxi Services Background" 
-            fill 
-            className="object-cover opacity-30"
-            priority
-          />
+         
         </div>
         
         <div className="relative z-20 max-w-7xl font-sans mx-auto px-4 sm:px-6 lg:px-8 text-center">

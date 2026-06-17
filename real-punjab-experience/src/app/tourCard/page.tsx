@@ -69,6 +69,15 @@ export default function CleanTourCard({  title,
           </div>
         </div>
 
+         <div className="mb-6">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-800 text-white text-xs font-medium shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            Transport Also Available
+          </span>
+        </div>
+
         {/* Footer: Price & Buttons */}
         <div className="mt-auto pt-4 border-t border-gray-600/25 flex items-center justify-between gap-3">
           <div>

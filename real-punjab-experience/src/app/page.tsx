@@ -62,7 +62,7 @@ export default function page() {
 
     
  {/* // Tours Details  */}
-    <div className='px-2 mt-30 xl:px-40 lg:px-30 md:px-10  ' >
+    <div className='px-2 mt-30 xl:px-60 lg:px-40 md:px-10  ' >
       <div className='mt-10 mb-10 '>
         <h1 className='text-black text-4xl text-start font-rubik  '>Top Rated Tours In Amritsar </h1>
       <p className='text-black ml-1 tracking-wider font-rubik'> Specially curated for you</p>
@@ -150,7 +150,7 @@ export default function page() {
 
   {/* Handpick experience  */}
 
-  <div className='mt-20 mb-10 px-2 xl:px-40 lg:px-30 md:px-10 ' >
+  <div className='mt-20 mb-10 px-2 xl:px-60 lg:px-30 md:px-10 ' >
      <h1 className='text-black text-4xl text-start font-rubik  '> Handpicked Experience </h1>
       <p className='text-black ml-1 tracking-wider font-rubik'> Travel hassle free </p>
        

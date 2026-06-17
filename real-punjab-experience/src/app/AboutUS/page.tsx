@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 export default function AboutUs() {
   return (
   <div>
-      <div className="w-full bg-white px-8">
+      <div className="w-full bg-white px-8 sm:px-6 md:px-10 lg:px-20 xl:px-40 2xl:px-80">
       
       {/* 1. Hero / Header Section */}
       <section className="relative text-primary mt-20">
@@ -51,11 +51,7 @@ export default function AboutUs() {
                    seeking spiritual peace, or exploring hidden gems, my team and
                     I are dedicated to ensuring every detail is handled with care, transparency, and warmth.
               </p>
-              <div className="mt-8">
-                <img src="/Images/signature-placeholder.png" alt="Ajay Kumar Signature" className="h-12 mb-2 opacity-70" /> {/* Optional: Add a signature image */}
-                <p className="font-bold text-gray-900 text-xl tracking-wide">Ajay Kumar</p>
-                <p className="text-gray-500 tracking-wider">Founder & Chief Travel Architect</p>
-              </div>
+              
             </div>
           </div>
         </div>

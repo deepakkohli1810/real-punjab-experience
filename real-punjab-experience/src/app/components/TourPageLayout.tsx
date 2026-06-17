@@ -3,6 +3,7 @@ import TourDetails from './TourDetailCompo';
 import ReviewsSection from './reviewSection';
 import WhyChooseUs from '../WhyChooseUs/page';
 import Footer from './Footer';
+import AboutUs from '../AboutUS/page';
 
 // Adjust these import paths to match your actual project structure
 
@@ -32,9 +33,7 @@ export default function TourPageLayout() {
       </div>
 
       {/* Footer Section (Full Width) */}
-      <div className="mt-16 md:mt-24">
-        <Footer/>
-      </div>
+      <AboutUs/>
     </div>
   );
 }

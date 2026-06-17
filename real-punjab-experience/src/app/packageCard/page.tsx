@@ -94,17 +94,17 @@ export default function PackageTourCard({
 
           {/* Button Group */}
           <div className="flex gap-2">
-            {/* Details Button */}
+            {/* Details Button (Secondary) */}
             <Link 
               href={`/Package-Tour/${slug}`}
-              className="px-3 py-2 text-sm font-semibold text-gray-600 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-[#1c2b60] transition-colors"
+              className="px-3 py-2 text-sm font-semibold text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 hover:text-gray-900 transition-colors"
             >
-              View Plan
+              Details
             </Link>
 
-            {/* Book Button */}
+            {/* Book Button (Primary) */}
             <Link 
-              href={`/book-now?package=${slug}`}
+              href={`/book-now?tour=${slug}`}
               className="px-4 py-2 text-sm font-bold text-white bg-[#1c2b60] rounded-lg hover:bg-blue-800 shadow-md hover:shadow-lg transition-all transform active:scale-95"
             >
               Book Now

@@ -24,10 +24,7 @@ export default function CleanTourCard({ title, location, days, people, price, im
           </span>
         </div>
 
-        {/* Top Right Badge: Location (Optional) */}
-        {/* <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-1">
-           📍 {location}
-        </div> */}
+       
       </div>
 
       {/* --- Content Section --- */}

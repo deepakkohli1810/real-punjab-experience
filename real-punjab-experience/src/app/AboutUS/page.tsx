@@ -1,9 +1,11 @@
 import React from 'react';
 import TourPageLayout from '../components/TourPageLayout';
+import Footer from '../components/Footer';
 
 export default function AboutUs() {
   return (
-    <div className="w-full bg-white">
+  <div>
+      <div className="w-full bg-white px-8">
       
       {/* 1. Hero / Header Section */}
       <section className="relative text-primary mt-20">
@@ -163,18 +165,14 @@ export default function AboutUs() {
           <p className="text-xl text-gray-600 mb-10">
             Let us handle the details while you focus on making memories. Contact us today to customize your perfect itinerary.
           </p>
-          <div className="flex font-serif flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-amber-600 text-white font-bold rounded-lg hover:bg-amber-700 transition-colors shadow-lg">
-              Explore Our Tours
-            </button>
-            <button className="px-8 py-4 bg-white text-gray-900 border-2 border-gray-200 font-bold rounded-lg hover:border-amber-600 hover:text-amber-600 transition-colors">
-              Contact Us
-            </button>
-          </div>
+       
         </div>
       </section>
-  
-
+       
+      
+       
     </div>
+     <Footer/>
+  </div>
   );
 }

@@ -8,12 +8,12 @@ const TourDropdown = () => {
   const dropdownRef = useRef(null);
 
   const tours = [
-    { name: "Golden Temple Tour", href: "/tours/golden-temple" },
-    { name: "Wagah Border Tour", href: "/tours/wagah-border" },
-    { name: "Food Tour", href: "/tours/food-tour" },
-    { name: "Heritage Walk Tour", href: "/tours/heritage-walk" },
-    { name: "Full Day Tour", href: "/tours/full-day" },
-    { name: "Hindu Temples Tour", href: "/tours/hindu-temples" },
+    { name: "Golden Temple Tour", href: "/tours/GoldenTemple1" },
+    { name: "Wagah Border Tour", href: "/tours/BorderTour" },
+    { name: "Food Tour", href: "/tours/FoodTour" },
+    { name: "Heritage Walk Tour", href: "/tours/HeritageWalk" },
+    { name: "Full Day Tour", href: "/Package-Tour/OnedayTour" },
+
   ];
 
   // Close dropdown when clicking outside of it
@@ -73,7 +73,7 @@ const TourDropdown = () => {
             {/* Optional: "View All Tours" link at the bottom */}
             <div className="border-t  border-gray-100 mt-1 pt-1">
               <Link
-                href="/tours"
+                href="/explore-more"
                 className="block px-4 py-2 text-lg font-semibold text-blue-900 hover:bg-blue-50 transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >

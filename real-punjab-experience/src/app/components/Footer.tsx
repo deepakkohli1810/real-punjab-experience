@@ -80,10 +80,10 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  { name: "Our Tours", href: "/tours" },
-                  { name: "Taxi Services", href: "/taxi-services" },
-                  { name: "Destinations", href: "/" },
-                  { name: "Gallery", href: "/gallery" },
+                  { name: "Home", href: "/" },
+                  { name: "Taxi Services", href: "/TaxiServices" },
+                  { name: "Contact", href: "/contact" },
+                  { name: "About Us", href: "/AboutUS" },
                 ].map((item) => (
                   <li key={item.name}>
                     <Link 
@@ -98,30 +98,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Column: Company */}
-            <div className="space-y-4">
-              <h3 className="text-base font-bold uppercase tracking-widest border-b border-[#f4ebd7]/20 pb-3 text-[#f4ebd7]">
-                Support
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  { name: "About Us", href: "/about" },
-                  { name: "Blog", href: "/blog" },
-                  { name: "Careers", href: "/careers" },
-                  { name: "Contact", href: "/contact" },
-                ].map((item) => (
-                  <li key={item.name}>
-                    <Link 
-                      href={item.href} 
-                      className="text-base hover:text-[#f4ebd7] transition-colors duration-200 inline-block group"
-                    >
-                       <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">{item.name}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
+           
             {/* Column: Contact Details */}
             <div className="col-span-2 md:col-span-1 space-y-4">
               <h3 className="text-base font-bold uppercase tracking-widest border-b border-[#f4ebd7]/20 pb-3 text-[#f4ebd7]">
@@ -129,9 +106,9 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  { icon: <FaPhoneAlt />, text: "+91 123 456 7890", link: "tel:+911234567890" },
-                  { icon: <FaEnvelope />, text: "info@realpunjab.com", link: "mailto:info@realpunjab.com" },
-                  { icon: <FaMapMarkerAlt />, text: "Chandigarh, India", link: "#" },
+                  { icon: <FaPhoneAlt />, text: "+91 98036 29487", link: "+91 98036 29487" },
+                  { icon: <FaEnvelope />, text: "info@realpunjabexperience.com", link: "mailto:info@realpunjab.com" },
+                  { icon: <FaMapMarkerAlt />, text: "Amritsar, India", link: "#" },
                 ].map((contact, i) => (
                   <li key={i} className="flex items-start gap-3 group cursor-pointer">
                     <div className="mt-1 text-[#f4ebd7] bg-[#f4ebd7]/10 p-1.5 rounded-md transition-colors group-hover:bg-[#f4ebd7] group-hover:text-[#1c2b60]">
@@ -157,19 +134,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Real Punjab Experience. All rights reserved.
           </p>
           
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-gray-400 hover:text-[#f4ebd7] text-sm uppercase tracking-wider transition-colors">
-              Privacy
-            </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-[#f4ebd7] text-sm uppercase tracking-wider transition-colors">
-              Terms
-            </Link>
-            
-            {/* Scroll to Top Button */}
-            <button onClick={scrollToTop} className="text-gray-400 hover:text-[#f4ebd7] transition-colors transform hover:translate-y-[-2px]">
-              <FaArrowUp />
-            </button>
-          </div>
+          
         </div>
 
       </div>

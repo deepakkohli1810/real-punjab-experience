@@ -11,10 +11,10 @@ export default function Navbar() {
 
   return (
     // 1. Wrapper with relative and z-50 to ensure the navbar sits above ALL page content
-    <header className="relative z-50 w-full">
+    <header className=" sticky lg:top-4 xl:top-4 md:top-3 top-2 relative z-50 w-full ">
       
       {/* Main Top Navbar */}
-      <nav className="bg-[#f4ebd7] shadow-md mt-4 max-w-[95%] border-[1px] border-gray-800 mx-auto rounded-full relative">
+      <nav className="bg-white  shadow-md mt-4 max-w-[95%] border-[1px] border-gray-800 mx-auto rounded-full relative">
         <div className="mx-auto py-2 px-4 md:px-6 flex items-center justify-between">
           
           {/* 1. Logo (Left) */}
@@ -65,7 +65,7 @@ export default function Navbar() {
 
           {/* 3. Desktop Explore More Button (Right) */}
           <Link
-            href="/book-now"
+            href="/explore-more"
             className="hidden md:block bg-[#1c2b60] text-base lg:text-lg text-white px-5 py-2 rounded-full hover:bg-blue-900 transition-all duration-300 ease-in-out flex-shrink-0 shadow-lg hover:shadow-xl"
           >
             Explore More
@@ -97,8 +97,8 @@ export default function Navbar() {
       {/* This prevents it from being clipped if the nav or a parent has overflow-hidden */}
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 mt-2 flex justify-center  z-50">
-          <div className="pointer-events-auto w-[95%] bg-[#f4ebd7] rounded-2xl shadow-xl 
-          md:hidden animate-fadeIn border border-gray-200">
+          <div className="pointer-events-auto w-[95%] bg-white rounded-2xl shadow-xl 
+          md:hidden animate-fadeIn border border-gray-400">
             <div className="flex flex-col p-4 gap-2 text-xl tracking-wider">
               
               <Link
@@ -114,7 +114,7 @@ export default function Navbar() {
               </div>
 
               <Link
-                href="/taxi-services"
+                href="/TaxiServices"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
               >
@@ -122,7 +122,7 @@ export default function Navbar() {
               </Link>
               
               <Link
-                href="/about"
+                href="/AboutUS"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
               >

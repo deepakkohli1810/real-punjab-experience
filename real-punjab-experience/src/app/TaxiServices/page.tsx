@@ -194,11 +194,11 @@ export default function TaxiServicesPage() {
       <div className="bg-white py-16 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-sans font-bold  text-gray-900 mb-4">Why Choose Our Taxi Services?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">We prioritize your safety, comfort, and peace of mind throughout your journey across Punjab.</p>
+            <h2 className="text-3xl font-sans font-bold tracking-wide text-gray-900 mb-4">Why Choose Our Taxi Services?</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto tracking-wide">We prioritize your safety, comfort, and peace of mind throughout your journey across Punjab.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 font-serif gap-8">
             <FeatureCard 
               icon={<ShieldCheck size={28} />}
               title="Verified & Safe"
@@ -249,7 +249,7 @@ export default function TaxiServicesPage() {
         </div>
       </div>
       </div>
-        <div className="mt-10" >
+        <div className="mt-10 text-white" >
             <Footer/>
         </div>
     </div>

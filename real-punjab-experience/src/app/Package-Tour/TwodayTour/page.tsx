@@ -1,6 +1,7 @@
 // app/tours/2-day-amritsar/page.tsx
 import React from 'react'
 import PackageTourDetails from '../../components/PackageTourCompo';
+import TourPageLayout from '../../components/TourPageLayout';
 
 export default function TwoDayAmritsarTour() {
     const packageData = {
@@ -162,6 +163,8 @@ export default function TwoDayAmritsarTour() {
     return (
         <div>
             <PackageTourDetails {...packageData} />
+            <TourPageLayout/>
+            
         </div>
     )
 }

@@ -8,19 +8,26 @@ import {
 
 const tourOptions = [
   "Golden Temple Tour with Jallianwala Bagh",
+  "Amritsar Full Day Tour (Recommended) ",
   "Amritsar Heritage Walk",
   "Wagah Border Ceremony Tour",
   "Local Village Tour ",
   "Food Walking Tour",
   "Heritage Walk Tour ",
   "Custom / Private Tour",
+  "Amritsar Two Day Tour",
+  "Amritsar and Dharamshala Tour (5days)",
+  "Escorted Tours (Himachal (Shimla , Manali , Dharamshala ) , Leh Ladakh , Sikh Temples , Hindu Temples) ",
 ];
 
 const transportOptions = [
   "Sedan (4 Seater)",
-  "SUV / Innova (6-7 Seater)",
+  " Innova (4-5 Seater)",
   "Tempo Traveller (12+ Seater)",
+  "Tempo Traveller (12+ Seater)",
+  "Luxury Urbania (12 Seater)",
   "Luxury Bus (20+ Seater)",
+  "Kia Carens 4+1 "
 ];
 
 export default function ContactPage() {

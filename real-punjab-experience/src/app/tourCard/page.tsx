@@ -2,7 +2,22 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function CleanTourCard({ title, location, days, people, price, image, slug }) {
+interface CleanTourCardProps {
+  title: string;
+  location: string;
+  days: number;
+  people: number;
+  price: number;
+  image: string;
+  slug: string;
+}
+export default function CleanTourCard({  title,
+  location,
+  days,
+  people,
+  price,
+  image,
+  slug, } : CleanTourCardProps) {
   return (
     <div className="group bg-white/50 font-serif rounded-2xl 
     shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all 

@@ -22,8 +22,15 @@ interface TourDetailProps {
   difficulty: "Easy" | "Moderate" | "Hard";
   description: string;
   highlights?: string[];
-  schedule?: { time: string; activity: string; description: string }[];
-  meetingPoint?: string; 
+
+  schedule?: {
+    time?: string;
+    activity: string;
+    description: string;
+    bullets: string[];
+  }[];
+
+  meetingPoint?: string;
   inclusions?: string[];
   exclusions?: string[];
   images?: string[];

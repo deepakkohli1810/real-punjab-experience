@@ -138,7 +138,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="/book-now"
+                href="/explore-more"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="bg-[#1c2b60] text-white text-center text-lg font-semibold px-5 py-3 rounded-full hover:bg-blue-900 transition-all duration-300 mt-2"
               >

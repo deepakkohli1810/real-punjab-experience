@@ -140,7 +140,7 @@ export default function AboutUs() {
       
 
       {/* 6. Stats Section */}
-      <section className="py-16 bg-amber-500 text-white">
+      <section className="py-16 rounded-2xl bg-amber-500 text-white">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[

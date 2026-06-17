@@ -1,5 +1,6 @@
 import { Rubik, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navigation";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -21,7 +22,11 @@ export default function RootLayout({
       lang="en"
       className={`${rubik.variable} ${playfair.variable}`}
     >
-      <body className={rubik.className}>{children}</body>
+
+      <body className={rubik.className}>
+        {children}
+        <Navbar/>
+        </body>
     </html>
   );
 }

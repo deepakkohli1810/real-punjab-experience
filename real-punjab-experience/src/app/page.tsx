@@ -11,11 +11,13 @@ import AboutUs from './AboutUS/page'
 import PackageTourDetails from './components/PackageTourCompo'
 import ExploreMore from './explore-more/page'
 import Link from "next/link";
+import Navbar from './components/Navigation'
 
 export default function page() {
  
   return (
 <div>
+  
   <div className='relative px-4 md:px-6 lg:px-20 py-6 md:py-8 lg:py-8'>
     <div className="relative w-full h-[78vh] md:h-[60vh] lg:h-[750px] ">
       
@@ -136,9 +138,13 @@ export default function page() {
     </div>
    {/* For the explore button  */}
     <div className="flex justify-center mt-10">
-  <button className="bg-primary text-white px-10 py-3 rounded-4xl tracking-wide hover:opacity-90 transition">
-    Explore More
-  </button>
+ 
+  <Link 
+  href="/explore-more"  className='bg-primary text-white px-10 py-3 rounded-4xl tracking-wide hover:opacity-90 transition'>
+        
+        Explore More
+
+  </Link>
 </div>
     </div>
 
@@ -179,7 +185,7 @@ export default function page() {
       <div className="flex justify-center lg:justify-end mt-10">
 
   <Link
-  href="/contact"
+  href="/explore-more"
 className="bg-primary text-lg font-sans uppercase text-white px-10 py-3 
   rounded-4xl tracking-wide hover:opacity-90  transition"
   >

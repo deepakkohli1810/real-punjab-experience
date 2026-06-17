@@ -32,7 +32,7 @@ export default function Navbar() {
           <div className="hidden md:flex tracking-wide flex-1 justify-center items-center gap-2 lg:gap-4 xl:gap-6">
             <Link
               href="/"
-              className="text-gray-700 tracking-wide hover:text-white hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-lg lg:text-lg"
+              className="text-gray-700 tracking-wide hover:text-white hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-lg lg:text-lg"
             >
               Home
             </Link>
@@ -43,21 +43,21 @@ export default function Navbar() {
 
             <Link
               href="/TaxiServices"
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-sm lg:text-lg"
             >
               Taxi Services
             </Link>
             
             <Link
               href="/AboutUS"
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-sm lg:text-xl"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-lg lg:text-lg"
             >
               About
             </Link>
 
             <Link
               href="/contact" 
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-sm lg:text-xl"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-lg lg:text-lg"
             >
               Contact Us 
             </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
           {/* 3. Desktop Explore More Button (Right) */}
           <Link
             href="/explore-more"
-            className="hidden md:block bg-[#1c2b60] text-base lg:text-lg text-white px-5 py-2 rounded-full hover:bg-blue-900 transition-all duration-300 ease-in-out flex-shrink-0 shadow-lg hover:shadow-xl"
+            className="hidden md:block bg-[#1c2b60] font-light text-base lg:text-lg text-white px-5 py-2 rounded-full hover:bg-blue-900 transition-all duration-300 ease-in-out flex-shrink-0 shadow-lg hover:shadow-xl"
           >
             Explore More
           </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light"
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light "
               >
                 Home
               </Link>
@@ -116,7 +116,7 @@ export default function Navbar() {
               <Link
                 href="/TaxiServices"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light"
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light "
               >
                 Taxi Services
               </Link>
@@ -124,7 +124,7 @@ export default function Navbar() {
               <Link
                 href="/AboutUS"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light"
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light "
               >
                 About
               </Link>
@@ -140,7 +140,7 @@ export default function Navbar() {
               <Link
                 href="/explore-more"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-[#1c2b60] text-white text-center text-lg font-semibold px-5 py-3 rounded-full hover:bg-blue-900 transition-all duration-300 mt-2"
+                className="bg-[#1c2b60] text-white text-center text-lg font-light px-5 py-3 rounded-full hover:bg-blue-900 transition-all duration-300 mt-2"
               >
                 Explore More
               </Link>

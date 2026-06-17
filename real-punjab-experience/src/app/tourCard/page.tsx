@@ -24,7 +24,7 @@ export default function CleanTourCard({  title,
     duration-300 overflow-hidden  flex flex-col h-full">
       
       {/* --- Image Section --- */}
-      <div className="relative h-90 w-full overflow-hidden">
+      <div className="relative h-65 w-full overflow-hidden">
         <Image 
           src={image} 
           alt={title} 
@@ -47,7 +47,7 @@ export default function CleanTourCard({  title,
         
         {/* Title & Rating */}
         <div className="mb-3">
-          <h3 className="text-xl font-bold font-Helvetica text-gray-900 line-clamp-1 group-hover:text-[#1c2b60] transition-colors">
+          <h3 className="text-xl font-sans font-Helvetica text-gray-900 line-clamp-1 group-hover:text-[#1c2b60] transition-colors">
             {title}
           </h3>
          

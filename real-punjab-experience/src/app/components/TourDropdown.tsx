@@ -39,7 +39,7 @@ const TourDropdown = () => {
       {/* Main Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`text-gray-700 lg:px-10 lg:py-1 text-center xl:text-lg md:text-lg rounded-full transition-all duration-300 ease-in-out font-light flex items-center gap-2
+        className={`text-gray-700 lg:px-10 lg:py-1 text-center text-lg  xl:text-lg md:text-lg rounded-full transition-all duration-300 ease-in-out font-light flex items-center gap-2
           ${isOpen ? ' -translate-y-1' : 'lg:hover:text-white lg:hover:bg-[#1c2b60] lg:hover:-translate-y-1'}
         `}
         aria-expanded={isOpen}

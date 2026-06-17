@@ -49,7 +49,7 @@ export default function page() {
 
         <Link
         href="/explore-more"
-        className='bg-primary hover:bg-blue-900 tracking-wider text-xl text-white font-bold py-3 px-12 rounded-full transition-all duration-300
+        className='bg-primary hover:bg-blue-900 tracking-wider text-xl text-white font-light py-3 px-12 rounded-full transition-all duration-300
              transform hover:scale-105 shadow-lg'
         >
           Book Now

@@ -32,7 +32,7 @@ export default function Navbar() {
           <div className="hidden md:flex tracking-wide flex-1 justify-center items-center gap-2 lg:gap-4 xl:gap-6">
             <Link
               href="/"
-              className="text-gray-700 tracking-wide hover:text-white hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-lg lg:text-xl"
+              className="text-gray-700 tracking-wide hover:text-white hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-lg lg:text-lg"
             >
               Home
             </Link>
@@ -50,14 +50,14 @@ export default function Navbar() {
             
             <Link
               href="/AboutUS"
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-sm lg:text-xl"
             >
               About
             </Link>
 
             <Link
               href="/contact" 
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-medium text-sm lg:text-xl"
+              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-sm lg:text-xl"
             >
               Contact Us 
             </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light"
               >
                 Home
               </Link>
@@ -116,7 +116,7 @@ export default function Navbar() {
               <Link
                 href="/TaxiServices"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light"
               >
                 Taxi Services
               </Link>
@@ -124,7 +124,7 @@ export default function Navbar() {
               <Link
                 href="/AboutUS"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light"
               >
                 About
               </Link>
@@ -132,7 +132,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-medium"
+                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light"
               >
                 Contact Us
               </Link>

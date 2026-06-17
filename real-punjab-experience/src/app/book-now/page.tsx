@@ -17,10 +17,13 @@ const tourSlugToName: Record<string, string> = {
 };
 
 const transportOptions = [
-  "Sedan (4 Seater)",
-  "SUV / Innova (6-7 Seater)",
+ "Sedan (4 Seater)",
+  " Innova (4-5 Seater)",
   "Tempo Traveller (12+ Seater)",
+  "Tempo Traveller (12+ Seater)",
+  "Luxury Urbania (12 Seater)",
   "Luxury Bus (20+ Seater)",
+  "Kia Carens 4+1 "
 ];
 
 // We wrap the form in Suspense because useSearchParams requires it in Next.js App Router

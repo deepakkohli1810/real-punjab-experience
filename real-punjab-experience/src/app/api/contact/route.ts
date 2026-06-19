@@ -16,8 +16,13 @@ export async function POST(req: Request) {
         pass: process.env.EMAIL_PASS, // Your App Password
       },
     });
+await transporter.verify();
+console.log("SMTP ready");
+
 
     const mailOptions = {
+
+      
       from: `"Website Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER, // Send to yourself
       replyTo: email, // Allows you to hit "Reply" in Gmail and it goes straight to the customer

@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 "use client";
 
 import { useState } from "react";
@@ -9,138 +8,170 @@ import TourDropdown from "./TourDropdown";
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const closeMenu = () => setIsMobileMenuOpen(false);
+
   return (
-    // 1. Wrapper with relative and z-50 to ensure the navbar sits above ALL page content
-    <header className=" sticky lg:top-4 xl:top-4 md:top-3 top-2 relative z-50 w-full ">
-      
-      {/* Main Top Navbar */}
-      <nav className="bg-white  shadow-md mt-4 max-w-[95%] border-[1px] border-gray-800 mx-auto rounded-full relative">
-        <div className="mx-auto py-2 px-4 md:px-6 flex items-center justify-between">
+    <header className="sticky top-2 mb-2 md:top-3 lg:top-4 z-50 w-full">
+      {/* Desktop & Mobile Navbar */}
+      <nav className="w-[95%] max-w-8xl mx-auto bg-white border border-gray-200 rounded-full shadow-lg">
+        <div className="flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8 py-2">
           
-          {/* 1. Logo (Left) */}
-          <Link href="/" className="font-bold text-blue-600 relative z-10">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
             <Image
               src="/Images/logo.png"
               alt="Logo"
-              width={120}
-              height={40}
-              className="w-24 h-auto md:w-32 lg:w-[120px]"
+              width={140}
+              height={50}
+              priority
+              className="w-20 sm:w-24 md:w-28 lg:w-32 h-auto"
             />
           </Link>
 
-          {/* 2. Desktop Navigation Links (Centered) */}
-          <div className="hidden md:flex tracking-wide flex-1 justify-center items-center gap-2 lg:gap-4 xl:gap-6">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex flex-1 items-center justify-center gap-1 lg:gap-3 xl:gap-5">
+            
             <Link
               href="/"
-              className="text-gray-700 tracking-wide hover:text-white hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-lg lg:text-lg"
+              className="text-gray-700 hover:text-white  px-3
+               lg:px-5 xl:px-7 py-2 rounded-full  text-sm lg:text-base tracking-wide 
+               hover:bg-[#1c2b60] hover:-translate-y-1 transition-all duration-300 ease-in-out "
             >
               Home
             </Link>
 
-            <div className="relative group">
-               <TourDropdown />
-            </div>
+            <TourDropdown />
 
             <Link
               href="/TaxiServices"
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-sm lg:text-lg"
+              className="text-gray-700 hover:text-white
+                px-2 lg:px-5 xl:px-7 py-2 
+               rounded-full text-sm lg:text-base tracking-wide 
+               hover:bg-[#1c2b60] hover:-translate-y-1 transition-all duration-300 ease-in-out"
             >
               Taxi Services
             </Link>
-            
+
             <Link
               href="/AboutUS"
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-lg lg:text-lg"
+              className="text-gray-700 hover:text-white
+               px-3 lg:px-5 xl:px-7 py-2 rounded-full 
+                text-sm lg:text-base  tracking-wide 
+               hover:bg-[#1c2b60] hover:-translate-y-1 transition-all duration-300 ease-in-out"
             >
               About
             </Link>
 
             <Link
-              href="/contact" 
-              className="text-gray-700 hover:text-white tracking-wide hover:bg-[#1c2b60] hover:-translate-y-1 px-3 md:px-6 lg:px-8 py-1.5 rounded-full transition-all duration-300 ease-in-out font-light text-lg lg:text-lg"
+              href="/contact"
+              className="text-gray-700 hover:text-white
+                px-3 lg:px-5 xl:px-7 py-2 rounded-full 
+              text-sm lg:text-base tracking-wide 
+               hover:bg-[#1c2b60] hover:-translate-y-1 transition-all duration-300 ease-in-out"
             >
-              Contact Us 
+              Contact Us
             </Link>
           </div>
 
-          {/* 3. Desktop Explore More Button (Right) */}
+          {/* Desktop CTA */}
           <Link
             href="/explore-more"
-            className="hidden md:block bg-[#1c2b60] font-light text-base lg:text-lg text-white px-5 py-2 rounded-full hover:bg-blue-900 transition-all duration-300 ease-in-out flex-shrink-0 shadow-lg hover:shadow-xl"
+            className="hidden md:flex items-center justify-center
+             bg-[#1c2b60] text-white px-4 lg:px-6 py-2 rounded-full 
+              hover:bg-blue-900 text-sm lg:text-base 
+               hover:-translate-y-1 transition-all duration-300 ease-in-out"
           >
             Explore More
           </Link>
 
-          {/* 4. Mobile Hamburger Button (Right) */}
+          {/* Mobile Hamburger */}
           <button
-            className="md:hidden text-gray-700 focus:outline-none z-[9999] touch-manipulation relative"
-            onClick={() => {
-   
-    setIsMobileMenuOpen(prev => !prev);
-  }}
-            aria-label="Toggle mobile menu"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-gray-700"
+            aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </button>
         </div>
       </nav>
 
-      {/* 🚨 MOBILE DROPDOWN - MOVED OUTSIDE THE <nav> 🚨 */}
-      {/* This prevents it from being clipped if the nav or a parent has overflow-hidden */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 flex justify-center  z-50">
-          <div className="pointer-events-auto w-[95%] bg-white rounded-2xl shadow-xl 
-          md:hidden animate-fadeIn border border-gray-400">
-            <div className="flex flex-col p-4 gap-2 text-xl tracking-wider">
-              
+        <div className="md:hidden absolute left-0 right-0 mt-3 flex justify-center">
+          <div className="w-[95%] max-w-md bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden animate-fadeIn">
+            
+            <div className="flex flex-col p-4">
+
               <Link
                 href="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light "
+                onClick={closeMenu}
+                className="px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-100"
               >
                 Home
               </Link>
 
-              <div className="ml-4">
-                 <TourDropdown />
+              <div className="px-4 py-2">
+                <TourDropdown />
               </div>
 
               <Link
                 href="/TaxiServices"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light "
+                onClick={closeMenu}
+                className="px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-100"
               >
                 Taxi Services
               </Link>
-              
+
               <Link
                 href="/AboutUS"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light "
+                onClick={closeMenu}
+                className="px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-100"
               >
                 About
               </Link>
 
               <Link
                 href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-[#1c2b60] hover:bg-white px-4 py-3 rounded-lg transition-colors text-lg font-light"
+                onClick={closeMenu}
+                className="px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-100"
               >
                 Contact Us
               </Link>
 
               <Link
                 href="/explore-more"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-[#1c2b60] text-white text-center text-lg font-light px-5 py-3 rounded-full hover:bg-blue-900 transition-all duration-300 mt-2"
+                onClick={closeMenu}
+                className="mt-3 bg-[#1c2b60] text-white text-center py-3 rounded-full hover:bg-blue-900 transition-all"
               >
                 Explore More
               </Link>

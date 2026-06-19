@@ -17,7 +17,7 @@ export default function page() {
   return (
 <div>
 
-  <div className='relative px-4 md:px-6 lg:px-20 py-6 md:py-8 lg:py-8'>
+  <div className='relative max-w-10xl py-4 mx-auto px-4 sm:px-6 lg:px-8'>
     <div className="relative w-full h-[78vh] md:h-[60vh] lg:h-[750px] ">
       
       {/* --- BACKGROUND IMAGE --- */}
@@ -62,7 +62,7 @@ export default function page() {
 
     
  {/* // Tours Details  */}
-    <div className='px-2 mt-30 xl:px-60 lg:px-40 md:px-10  ' >
+    <div className=' mt-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  ' >
       <div className='mt-10 mb-10 '>
         <h1 className='text-black text-4xl text-start font-rubik  '>Top Rated Tours In Amritsar </h1>
       <p className='text-black ml-1 tracking-wider font-rubik'> Specially curated for you</p>
@@ -150,7 +150,7 @@ export default function page() {
 
   {/* Handpick experience  */}
 
-  <div className='mt-20 mb-10 px-2 xl:px-60 lg:px-30 md:px-10 ' >
+  <div className='mt-20 mb-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' >
      <h1 className='text-black text-4xl text-start font-rubik  '> Handpicked Experience </h1>
       <p className='text-black ml-1 tracking-wider font-rubik'> Travel hassle free </p>
        

@@ -106,9 +106,9 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  { icon: <FaPhoneAlt />, text: "+91 98036 29487", link: "+91 98036 29487" },
-                  { icon: <FaEnvelope />, text: "info@realpunjabexperience.com", link: "mailto:info@realpunjab.com" },
-                  { icon: <FaMapMarkerAlt />, text: "Amritsar, India", link: "#" },
+                  { icon: <FaPhoneAlt />, text: "+91 98036 29487", link: "https://wa.me/91980360007?text=Hello%20I%20would%20like%20a%20free%20quote" },
+                  { icon: <FaEnvelope />, text: "contact@realpunjabexperience.com", link: "mailto:contact@realpunjabexperience.com" },
+                  { icon: <FaMapMarkerAlt />, text: "Amritsar, India", link: "" },
                 ].map((contact, i) => (
                   <li key={i} className="flex items-start gap-3 group cursor-pointer">
                     <div className="mt-1 text-[#f4ebd7] bg-[#f4ebd7]/10 p-1.5 rounded-md transition-colors group-hover:bg-[#f4ebd7] group-hover:text-[#1c2b60]">

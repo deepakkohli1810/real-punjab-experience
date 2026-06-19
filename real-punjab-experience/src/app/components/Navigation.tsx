@@ -128,7 +128,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute left-0 right-0 mt-3 flex justify-center">
-          <div className="w-[95%] max-w-md bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden animate-fadeIn">
+          <div className="w-[95%] max-w-md bg-white rounded-3xl shadow-xl border border-gray-200  animate-fadeIn">
             
             <div className="flex flex-col p-4">
 
@@ -140,7 +140,7 @@ export default function Navbar() {
                 Home
               </Link>
 
-              <div className="px-4 py-2">
+              <div className=" px-4 lg:px-0 py-1 lg:py-0">
                 <TourDropdown />
               </div>
 

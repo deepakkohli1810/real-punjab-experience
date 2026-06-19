@@ -106,7 +106,7 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 {[
-                  { icon: <FaPhoneAlt />, text: "+91 98036 29487", link: "https://wa.me/91980360007?text=Hello%20I%20would%20like%20a%20free%20quote" },
+                  { icon: <FaPhoneAlt />, text: "+91 98036 29487", link: "https://wa.me/919803629487?text=Hello%20I%20would%20like%20to%20book%20a%20tour%20with%20your%20company%20!" },
                   { icon: <FaEnvelope />, text: "contact@realpunjabexperience.com", link: "mailto:contact@realpunjabexperience.com" },
                   { icon: <FaMapMarkerAlt />, text: "Amritsar, India", link: "" },
                 ].map((contact, i) => (

@@ -59,7 +59,9 @@ export default function TourDetails({
       travelers: travelers.toString(),
       totalAmount: (price * travelers).toString(),
     });
-    router.push(`/contact?${params.toString()}`);
+    router.push(`/book-now?${params.toString()}`);  {
+  ;
+    }
   };
 
   const handleImageClick = (index: number) => {

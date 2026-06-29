@@ -74,15 +74,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <Link
-            href="/explore-more"
-            className="hidden md:flex items-center justify-center
-             bg-[#1c2b60] text-white px-4 lg:px-6 py-2 rounded-full 
-              hover:bg-blue-900 text-sm lg:text-base 
-               hover:-translate-y-1 transition-all duration-300 ease-in-out"
-          >
-            Explore More
-          </Link>
+          
 
           {/* Mobile Hamburger */}
           <button

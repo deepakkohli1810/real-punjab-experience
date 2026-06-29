@@ -139,7 +139,7 @@ export default function page() {
     <div className="flex justify-center mt-10">
  
   <Link 
-  href="/explore-more"  className='bg-primary text-white px-10 py-3 rounded-4xl tracking-wide hover:opacity-90 transition'>
+  href="/contact"  className='bg-primary text-white px-10 py-3 rounded-4xl tracking-wide hover:opacity-90 transition'>
         
         Explore More
 
@@ -184,7 +184,7 @@ export default function page() {
       <div className="flex justify-center lg:justify-end mt-10">
 
   <Link
-  href="/explore-more"
+  href="/contact"
 className="bg-primary text-lg font-sans uppercase text-white px-10 py-3 
   rounded-4xl tracking-wide hover:opacity-90  transition"
   >

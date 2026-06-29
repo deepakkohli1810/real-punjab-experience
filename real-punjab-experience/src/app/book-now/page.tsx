@@ -19,8 +19,8 @@ const tourSlugToName: Record<string, string> = {
 const transportOptions = [
  "Sedan (4 Seater)",
   " Innova (4-5 Seater)",
-  "Tempo Traveller (12+ Seater)",
-  "Tempo Traveller (12+ Seater)",
+  "Tempo Traveller (12 Seater)",
+  "Tempo Traveller (17 Seater)",
   "Luxury Urbania (12 Seater)",
   "Luxury Bus (20+ Seater)",
   "Kia Carens 4+1 "

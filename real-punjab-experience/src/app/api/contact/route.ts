@@ -1,31 +1,24 @@
 // app/api/contact/route.ts
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+// Initialize Resend with your API key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    // Added countryCode to match the frontend payload
     const { firstName, lastName, email, countryCode, phone, tour, hasTransport, transportType, message } = body;
 
-    // Configure Nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      service: 'gmail', 
-      auth: {
-        user: process.env.EMAIL_USER, // Your email address
-        pass: process.env.EMAIL_PASS, // Your App Password
-      },
-    });
-await transporter.verify();
-console.log("SMTP ready");
-
-
-    const mailOptions = {
-
+    // Send email using Resend
+    const { data, error } = await resend.emails.send({
+      // IMPORTANT: The 'from' address MUST be from a domain verified in your Resend dashboard.
+      // For testing, you can use 'onboarding@resend.dev'. For production, use 'contact@yourdomain.com'.
+      from: process.env.RESEND_FROM_EMAIL || 'Website Contact <booking@send.realpunjabexperience.com>', 
       
-      from: `"Website Contact" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER, // Send to yourself
+      to: [process.env.BOOKING_EMAIL || 'contact@realpunjabexperience.com'], // Recipient email(s)
       replyTo: email, // Allows you to hit "Reply" in Gmail and it goes straight to the customer
+      
       subject: `New Contact Inquiry: ${tour || 'General'} from ${firstName} ${lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
@@ -64,13 +57,17 @@ console.log("SMTP ready");
           
         </div>
       `,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
+    // Handle Resend API errors
+    if (error) {
+      console.error('Resend API Error:', error);
+      return NextResponse.json({ success: false, message: 'Failed to send email.' }, { status: 500 });
+    }
 
     return NextResponse.json({ success: true, message: 'Email sent successfully!' }, { status: 200 });
   } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json({ success: false, message: 'Failed to send email.' }, { status: 500 });
+    console.error('Server Error:', error);
+    return NextResponse.json({ success: false, message: 'Failed to process request.' }, { status: 500 });
   }
 }

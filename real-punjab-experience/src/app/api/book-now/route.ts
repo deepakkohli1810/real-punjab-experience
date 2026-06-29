@@ -1,14 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-// 1. Setup the Nodemailer Transporter
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER, 
-    pass: process.env.EMAIL_PASS, 
-  },
-});
+// Initialize Resend with your API key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,11 +12,15 @@ export async function POST(req: NextRequest) {
       hasTransport, transportType, message, tour 
     } = body;
 
-    // 2. Format the Email Content (HTML for a clean look)
-    const mailOptions = {
-      from: `"Website Booking" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER, // Sends to your own email. Change to a specific booking email if needed.
+    // Send email using Resend
+    const { data, error } = await resend.emails.send({
+      // IMPORTANT: The 'from' address MUST be from a domain verified in your Resend dashboard.
+      // For testing, you can use 'onboarding@resend.dev'. For production, use 'bookings@yourdomain.com'.
+      from: process.env.RESEND_FROM_EMAIL || 'Website Booking <booking@send.realpunjabexperience.com>', 
+      
+      to: [process.env.BOOKING_EMAIL || 'contact@realpunjabexperience.com'], // Recipient email(s)
       replyTo: email, // Allows you to reply directly to the customer's email
+      
       subject: `New Booking Request: ${tour}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
@@ -54,10 +52,16 @@ export async function POST(req: NextRequest) {
           </div>
         </div>
       `,
-    };
+    });
 
-    // 3. Send the Email
-    await transporter.sendMail(mailOptions);
+    // Handle Resend API errors
+    if (error) {
+      console.error('Resend API Error:', error);
+      return NextResponse.json({ 
+        success: false, 
+        message: 'Failed to send booking request. Please try again later.' 
+      }, { status: 500 });
+    }
 
     return NextResponse.json({ 
       success: true, 
@@ -65,7 +69,7 @@ export async function POST(req: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Error sending booking email:', error);
+    console.error('Server Error sending booking email:', error);
     return NextResponse.json({ 
       success: false, 
       message: 'Failed to send booking request. Please try again later.' 
